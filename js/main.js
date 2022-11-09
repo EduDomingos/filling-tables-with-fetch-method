@@ -22,26 +22,26 @@ async function getData() {
 }
 
 function createRow(element) {
-  linha = document.createElement("tr")
+  row = document.createElement("tr")
   tdName = document.createElement("td")
   tdPrice = document.createElement("td")
   tdName.innerHTML = element.Nome
   tdPrice.innerHTML = element.Valor
 
-  linha.appendChild(tdName)
-  linha.appendChild(tdPrice)
+  row.appendChild(tdName)
+  row.appendChild(tdPrice)
 
-  return linha
+  return row
 }
 
 
 async function main() {
   const data = await getData(requestUrl)
-  const tabela = document.querySelector("#tabela")
+  const table = document.querySelector("#tabela")
 
   data.forEach(element => {
-    let linha = createRow(element)
-    tabela.appendChild(linha)    
+    let row = createRow(element)
+    table.appendChild(row)    
   });
 }
 
