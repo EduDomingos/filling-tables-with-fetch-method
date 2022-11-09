@@ -1,4 +1,4 @@
-const requestUrl = 'https://personal-27rwjmv9.outsystemscloud.com/cardapio/rest/lanches/list'
+const requestUrl = 'your-api-endpoint-url-here'
 
 
 // function getData(url) {
@@ -10,13 +10,13 @@ const requestUrl = 'https://personal-27rwjmv9.outsystemscloud.com/cardapio/rest/
 //   return json
 // }
 
-async function getData() {
+async function getData(url) {
 	const response = await fetch(requestUrl);
 	// Handle errors
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
-	const data = await response.json();
+	const data = response.json();
 
   return data
 }
