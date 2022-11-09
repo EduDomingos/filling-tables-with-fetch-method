@@ -1,7 +1,7 @@
 const requestUrl = 'https://personal-27rwjmv9.outsystemscloud.com/cardapio/rest/lanches/list'
 
 
-async function getData(url) {
+function getData(url) {
   let request = new XMLHttpRequest()
   request.open("GET", url, false)
   request.send()
@@ -27,15 +27,11 @@ function createRow(element) {
 function main() {
   const data = getData(requestUrl)
   const tabela = document.querySelector("#tabela")
-  console.log(data)
-  data.forEach(i => {
-    let linha = createRow(i)
-    tabela.appendChild(linha)
-    
-  }); 
-  
-      
 
+  data.forEach(element => {
+    let linha = createRow(element)
+    tabela.appendChild(linha)    
+  });
 }
 
 main()
